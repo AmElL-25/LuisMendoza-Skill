@@ -37,30 +37,52 @@ description: >-
 
 ## Capa 2 · Reglas por componente
 
-### Cabecera y navegación
-- **Barra superior fija a todo el ancho:** [logo y botón de plegar] [migas de pan] [controles a la derecha]. Nada la tapa ni la oscurece; la barra lateral y el panel van siempre debajo.
-- **Migas de pan:** justo después del logo, en posición fija (no se corren al abrir el panel, mismo lugar y altura en todas las pantallas). Sin "Inicio" repetido ni segmentos duplicados. Cada parte es clicable y va en negrita; la página actual (último segmento) va como texto normal, no clicable. En escritorio, el clic en un módulo o sección de la miga abre el panel de ese módulo con esa sección desplegada (se desplaza hasta ella y la resalta un momento), sin cambiar de pantalla; si el panel ya estaba abierto, no se cierra, solo asegura que la sección quede desplegada. Nada de menús desplegables en la miga: simple y funcional. Nombres iguales al menú; si son largos, "…" con tooltip.
-- **Barra lateral de módulos generales:** nunca se borra, se oculta ni se pliega sola, y mantiene sus nombres visibles. Elegir una opción no la mueve (sin recorridos, saltos ni despliegues verticales); solo cambia el contenido. Cambiar de sección (ERP a CRM) no la reconstruye.
-- **Una sola lista a la vez (escritorio):** la barra lateral muestra solo los módulos, sin desplegarse; toda la lista del módulo va en el panel. Nunca la barra desplegada más el panel mostrando dos listas.
-- **Mismo comportamiento para todos los módulos:** no importa si un módulo tiene 2 o 20 opciones, se abre igual (en el panel en escritorio). No mezclar módulos que se despliegan dentro de la barra con otros que abren panel: el usuario no debe adivinar qué pasará.
-- **Submenús, empujar y no tapar:**
-  - **Acordeón** dentro de la barra lateral (sangría y flecha que gira): en móvil y tablet.
-  - **Panel que empuja** en escritorio: se abre al costado de la barra general, empieza debajo de la cabecera y encoge el contenido sin capa ni oscurecido, y sin cabecera propia que repita el nombre del módulo. Al elegir una opción navega y sigue abierto con la opción resaltada. Se cierra con otro clic en el módulo, con Esc (en cualquier página) o con clic en el contenido. Transición corta, respetando "reducir movimiento". El foco entra al abrir y vuelve al cerrar.
-  - **Clic en un módulo de la barra lateral (escritorio):** abre su panel sin navegar; otro clic en el mismo módulo lo cierra y clic en otro módulo lo cambia de inmediato a la lista de ese módulo. Solo se resalta el módulo cuyo panel está abierto (o, sin panel, el de la pantalla activa); nunca dos módulos resaltados a la vez. Vale igual para todos los módulos, incluidos los de arriba (Inicio, Tareas, Sistema OKR) y los de Áreas de la empresa.
-  - **Secciones plegables dentro del panel:** cada sección con varias pantallas tiene un título que es un botón (ícono, nombre y flechita a la derecha: apunta a la derecha cerrada y hacia abajo abierta). Al abrir, sus pantallas aparecen debajo con sangría y una línea a la izquierda. Las secciones de una sola pantalla son enlace directo, sin flechita; un módulo sin secciones se muestra como lista simple.
-    - Al llegar, solo está abierta la sección de la pantalla activa; las demás empiezan cerradas.
-    - Lo que abres o cierras se recuerda por módulo mientras dure la sesión.
-    - Clic en el título solo pliega o despliega, no navega. Funciona con teclado (Enter) y el giro de la flecha dura unos 150 ms.
-  - **Ancho del panel ajustable:** se adapta al texto más largo del módulo, entre 200 y 264 px, así los módulos con pocas opciones usan un panel más angosto. El ancho se calcula con todas las pantallas (también las plegadas) y no cambia al plegar o desplegar, solo al pasar a otro módulo. Nunca genera scroll horizontal.
-  - **Flechitas (chevrons):** del mismo tamaño en toda la navegación (barra lateral, ramas en móvil y secciones del panel), unos 18 px, trazo un poco más grueso y color con buen contraste, sin mover el diseño.
-  - **Una sola opción activa:** si varias coinciden, se resalta solo la más específica (primero la que coincide en ruta y filtros, luego la de ruta más larga), tanto en la barra lateral como en el panel.
-  - **Controles solo donde funcionan:** si un botón no tiene efecto en un tamaño de pantalla (por ejemplo "Plegar todo" en escritorio, donde la barra ya no se despliega), se oculta ahí y se deja solo donde sí hace algo (móvil).
-  - La opción activa siempre resaltada y el mismo comportamiento en todos los módulos.
+### Cabecera y navegación (igual en TODOS los módulos del sistema)
+**Barra superior**
+- Fija arriba, a todo el ancho: logo, luego migas de pan, luego controles a la derecha.
+- Nunca se mueve, no cambia de altura y nada la tapa ni la oscurece.
+
+**Migas de pan**
+- Van justo después del logo, siempre en el mismo lugar.
+- Cada parte va en negrita y es clicable, excepto la página actual, que va como texto normal.
+- Sin segmentos repetidos (nada de "Inicio › Inicio") ni menús desplegables.
+- En escritorio, el clic en un módulo o sección abre el panel de ese módulo con esa sección desplegada, sin cambiar de pantalla. Si el panel ya está abierto, no se cierra.
+- Nombres iguales al menú. Si son largos, "…" con tooltip.
+
+**Barra lateral**
+- Siempre visible y con sus nombres. Nunca se pliega, se borra ni se mueve sola.
+- En escritorio muestra solo los módulos, sin desplegarse. Nunca dos listas a la vez.
+- Clic en un módulo abre su panel sin navegar. Otro clic en el mismo lo cierra y clic en otro lo cambia de inmediato.
+- Solo un módulo resaltado a la vez: el del panel abierto o, sin panel, el de la pantalla actual.
+- Todos los módulos se comportan igual, tengan 2 o 20 opciones.
+- Orden por uso: los módulos del día a día arriba y los ocasionales (Configuración, Ayuda) al final; dentro del panel, lo más usado primero. El orden nunca cambia solo.
+
+**Panel del módulo (escritorio)**
+- Se abre al costado de la barra lateral, debajo de la barra superior, y empuja el contenido. No tapa nada ni oscurece el fondo.
+- No tiene cabecera propia.
+- Al elegir una opción, navega y el panel sigue abierto con esa opción resaltada.
+- Se cierra con otro clic en el módulo, con Esc o con un clic en el contenido.
+- Ancho ajustado al texto más largo del módulo, entre unos 200 y 264 px. Solo cambia al pasar a otro módulo.
+
+**Secciones dentro del panel**
+- Una sección con varias pantallas es un título clicable con flechita: apunta a la derecha cerrada y hacia abajo abierta.
+- Al abrirla, sus pantallas aparecen debajo con sangría.
+- Una sección de una sola pantalla es un enlace directo, sin flechita.
+- Al entrar, solo está abierta la sección de la pantalla actual. Lo que el usuario abre o cierra se recuerda durante la sesión.
+- El clic en el título solo abre o cierra la sección, no navega. Funciona con teclado.
+
+**Detalles comunes**
+- Una sola opción activa: si varias coinciden, se resalta la más específica.
+- Flechitas del mismo tamaño en toda la navegación (unos 18 px) y con buen contraste.
+- Si un botón no hace nada en un tamaño de pantalla, se oculta ahí. Por ejemplo, "plegar todo" en escritorio, donde la barra lateral no se despliega.
+- En móvil y tablet, la barra lateral va en acordeón dentro de un cajón, con un módulo abierto a la vez.
+- Pocas opciones a la vista: menú de acciones (⋯) con máximo 7 opciones, selector con más de 10 valores con buscador, y sección del panel con más de 7 pantallas dividida en subsecciones.
 
 ### Responsive (aplica a todo)
 - Mobile first: cada pantalla, componente y cambio se diseña y prueba en escritorio, tablet y móvil (por ejemplo 1440, 1024, 768 y 390 px).
 - En móvil, los submenús van en acordeón, las tablas pasan a tarjetas y el Kanban muestra una etapa a la vez; nada se corta ni se sale de la pantalla.
 - Áreas táctiles cómodas en móvil (unos 44 px) y textos legibles sin hacer zoom.
+- En móvil, el botón principal (Guardar, Registrar venta) queda fijo abajo, a todo el ancho y al alcance del pulgar. Las acciones peligrosas (Eliminar) van lejos de él.
 
 ### Indicadores y filtros
 - Máximo 3 indicadores, como píldoras clicables que filtran ("Todos (120)", "Por cobrar (12)"), en lugar de tarjetas KPI grandes.
@@ -83,6 +105,7 @@ description: >-
 
 ### Formularios
 - Si hay comprobante, el bloque "Subir captura y escanear con IA" va como Paso 1, arriba, y acepta pegar con Ctrl+V o arrastrar la imagen. Autocompleta y el usuario solo revisa y confirma.
+- Muestra solo los campos que tu usuario necesita ahora: los que dependen de una elección aparecen al elegirla (por ejemplo, "N.º de operación" solo si el método es "Transferencia") y lo avanzado va en "Más opciones" cerrado. Con más de unos 7 campos visibles, agrúpalos en bloques con título o divide en pasos ("Paso 2 de 3"), sin perder lo escrito al cambiar de paso.
 - Errores junto al campo, explicando cómo arreglarlo; nunca borrar lo que el usuario ya escribió.
 
 ### Acciones peligrosas y en lote
@@ -99,8 +122,9 @@ description: >-
 ### Calidad nivel Apple y Google
 - **Espaciado:** una sola escala (múltiplos de 4 u 8 px) y alineaciones perfectas.
 - **Estados:** cargando con esqueletos, vacío con mensaje útil y acción para empezar, error con cómo seguir, éxito con confirmación breve.
-- **Respuesta inmediata:** cada clic muestra algo al instante (estado presionado, carga en el botón, aviso al guardar o copiar).
-- **Movimiento sutil** y sin saltos de diseño mientras carga.
+- **Respuesta inmediata:** cada clic muestra algo visible al instante (estado presionado, carga en el botón, aviso al guardar o copiar). Si tarda más de 400 ms, esqueleto o indicador de progreso; si tarda más de unos 2 segundos, di qué pasa ("Guardando venta…").
+- **Se nota qué se puede tocar:** todo lo clicable (botones, píldoras, filas, enlaces) tiene hover, cursor de mano y estado presionado. Lo que no es clicable nunca parece botón ni enlace.
+- **Movimiento sutil:** animaciones de paneles, menús y modales entre 150 y 300 ms (nunca más de 400 ms), que no hacen esperar, y sin saltos de diseño mientras carga.
 - **Teclado y accesibilidad:** foco visible, orden lógico, Esc cierra, Enter confirma.
 - **Pulido final:** íconos del mismo estilo, textos sin errores, revisado en escritorio, tablet y móvil.
 - **Modo oscuro (si el ERP lo tiene):** mismos contrastes y colores de estado legibles en ambos modos.
@@ -125,8 +149,8 @@ Cada pantalla se califica con las 10 reglas de oro: 1 punto por cada ✅. Para a
 - [ ] 6. Navegación estable
 - [ ] 7. Sin scroll horizontal (medido a 1440, 1280, 1024 y 390 px)
 - [ ] 8. Todo el ancho y responsive siempre (probado en escritorio, tablet y móvil)
-- [ ] 9. Respeta la paciencia del usuario
-- [ ] 10. Calidad nivel Apple y Google
+- [ ] 9. Respeta la paciencia del usuario (formularios largos por pasos o bloques, campos que aparecen cuando hacen falta)
+- [ ] 10. Calidad nivel Apple y Google (respuesta visible en menos de 400 ms, animaciones de 300 ms o menos, lo clicable parece clicable)
 
 ## Cómo se usa
 
